@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <h1>タスク新規作成ページ</h1>
 
 <div class="row">
@@ -19,7 +21,8 @@
     </div>    
         
 
-        {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
+    <!--    {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!} -->
+        {{ Form::button('<span class="glyphicon glyphicon-remove">投稿</span>', array('class'=>'btn btn-default', 'type'=>'submit')) }}
 
     {!! Form::close() !!}
 </div>
