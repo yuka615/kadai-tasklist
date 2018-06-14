@@ -21,7 +21,7 @@ class TasksController extends Controller
         if (\Auth::check()) {
             $user = \Auth::user();
             $tasks = $user->tasks()->orderBy('id')->paginate(1000);
-
+        
             $data = [
                 'user' => $user,
                 'tasks' => $tasks,
@@ -89,10 +89,15 @@ class TasksController extends Controller
          if (\Auth::user()->id === $task->user_id){ 
              return view('tasks.show', [ 
              'task' => $task, 
-         ]); 
-         } else { 
+         ]);
+         }
+         
+         
+         else { 
          return redirect('/'); 
          } 
+         
+         
      }
     }
 
@@ -111,6 +116,8 @@ class TasksController extends Controller
              return view('tasks.edit', [ 
              'task' => $task, 
          ]); 
+         }
+         else {
          return redirect('/'); 
               
          } 
